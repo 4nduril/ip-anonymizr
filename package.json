@@ -1,0 +1,19 @@
+{
+  "name": "ip-anonymizr",
+  "version": "0.1.0",
+  "description": "A simple function to remove identifying parts from v4/v6 IPs",
+  "main": "index.js",
+  "repository": "git@github.com:4nduril/ip-anonymizr.git",
+  "author": "Tobias Barth <4nduril@gmail.com>",
+  "license": "MIT",
+	"scripts": {
+		"test": "mocha"
+	},
+  "dependencies": {
+    "ip": "^1.1.5"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0"
+  }
+}
