@@ -1,20 +1,49 @@
 {
   "name": "ip-anonymizr",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "A simple function to remove identifying parts from v4/v6 IPs",
   "main": "index.js",
   "repository": "git@github.com:4nduril/ip-anonymizr.git",
   "author": "Tobias Barth <4nduril@gmail.com>",
   "license": "MIT",
-	"scripts": {
-		"test": "mocha"
-	},
+  "scripts": {
+    "commit": "git-cz",
+    "lint": "eslint src __tests__",
+    "test": "jest --coverage",
+    "watch": "jest --watch",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
+  },
   "dependencies": {
     "ip": "^1.1.5"
   },
   "devDependencies": {
-    "expect": "^1.20.2",
-    "mocha": "^3.2.0"
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^4.19.1",
+    "jest": "^23.1.0",
+    "semantic-release": "^15.5.0",
+    "travis-deploy-once": "^5.0.0"
   },
-	"engines": { "node": ">=6.0" }
+  "engines": {
+    "node": ">=8.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  }
 }
