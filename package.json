@@ -15,7 +15,7 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "ip": "^1.1.5"
+    "ip-regex": "^3.0.0"
   },
   "devDependencies": {
     "commitizen": "^2.10.1",

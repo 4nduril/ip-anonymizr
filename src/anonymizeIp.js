@@ -1,11 +1,16 @@
-const ip = require('ip');
+const { v4, v6 } = require('ip-regex');
+
+const v4Mapper = mask => (byte, idx) =>
+	(parseInt(byte, 10) & mask[idx]).toString();
 
 const anonymizeIp = remoteAddress => {
-	if (ip.isV4Format(remoteAddress)) {
-		const parts = remoteAddress.split('.');
-		return `${parts[0]}.${parts[1]}.0.0`;
+	if (v4().test(remoteAddress)) {
+		const mask = [255, 255, 0, 0];
+		return remoteAddress.split('.')
+			.map(v4Mapper(mask))
+			.join('.');
 	}
-	if (ip.isV6Format(remoteAddress)) {
+	if (v6().test(remoteAddress)) {
 		return (/::/.test(remoteAddress))
 			? remoteAddress.replace(/(::).*/, '$1')
 			: remoteAddress.replace(/([a-f0-9]{1,4}:?){4}$/, ':');
