@@ -1,4 +1,4 @@
-const ip = require('ip');
+import ip from  'ip';
 
 const anonymizeIp = remoteAddress => {
 	if (ip.isV4Format(remoteAddress)) {
@@ -13,4 +13,4 @@ const anonymizeIp = remoteAddress => {
 	return '::';
 };
 
-module.exports = anonymizeIp;
+export default anonymizeIp;
