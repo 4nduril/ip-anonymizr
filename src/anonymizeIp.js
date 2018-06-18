@@ -1,4 +1,4 @@
-const { v4, v6 } = require('ip-regex');
+import { v4, v6 } from 'ip-regex';
 
 const v4Mapper = mask => (byte, idx) =>
 	(parseInt(byte, 10) & mask[idx]).toString();
@@ -18,4 +18,4 @@ const anonymizeIp = remoteAddress => {
 	return '::';
 };
 
-module.exports = anonymizeIp;
+export default anonymizeIp;
