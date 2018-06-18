@@ -1,5 +1,5 @@
-const expect = require('expect');
-const anonymizeIp = require('../src/anonymizeIp');
+import expect from 'expect';
+import anonymizeIp from '../src/anonymizeIp';
 
 describe('AnonymizeIP', () => {
 	it('is a function', () => {
