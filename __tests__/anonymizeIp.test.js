@@ -21,6 +21,11 @@ describe('AnonymizeIP', () => {
 		expect(anonymizeIp(ip)).toEqual('fe80::');
 	});
 
+	it('returns one double colon max', () => {
+		const ip = 'fe80:0000:1234::abcd';
+		expect(anonymizeIp(ip)).toEqual('fe80:0:1234::');
+	});
+
 	it('returns two colons if not v4 nor v6', () => {
 		const ip = 'hello';
 		expect(anonymizeIp(ip)).toEqual('::');
