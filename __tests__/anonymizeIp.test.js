@@ -1,4 +1,6 @@
-import anonymizeIp, { collapseV6, expandV6 } from '../src/anonymizeIp';
+import anonymizeIp from '../src/anonymizeIp';
+import collapseV6 from '../src/collapseV6';
+import expandV6 from '../src/expandV6';
 
 describe('AnonymizeIP', () => {
 	describe('default export', () => {
