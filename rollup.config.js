@@ -1,4 +1,3 @@
-import babel from 'rollup-plugin-babel';
 import pkg from './package.json';
 
 const externals = [
@@ -17,9 +16,6 @@ const makeExternalPredicate = externalsArr => {
 export default {
 	input: './src/anonymizeIp.js',
 	external: makeExternalPredicate(externals),
-	plugins: [
-		babel({ plugins: ['external-helpers'] }),
-	],
 	output: [
 		{ file: pkg.main, format: 'cjs' },
 		{ file: pkg.module, format: 'es' },
